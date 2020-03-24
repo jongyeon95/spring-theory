@@ -1,0 +1,30 @@
+Spring Bean이란
+
+spring에서 POJO(plain, old java object)를 'Beans'라고 부른다
+Beans는 애플리케이션의 핵심을 이루는 객체이며 Spring Ioc컨테이너에 의해 인스턴스화, 관리, 생성된다.
+Beans는 우리가 컨테이너에 공급하는 설정 메타 데이터파일(XML파일)에 의해 생성된다.
+
+
+Spring Bean 정의
+일반적으로 XML 파일에 정의한다.
+주요속성
+	-class(필수): 정규화된 자바 클래스 이름
+	-id: bean의 고유 식별자
+	-scope: 객체의 범위(singleton, prototype)
+	-constructor-arg: 생성 시 생성자에 전달할 인수
+	-property: 생성 시 bean setter에 전달할 인수
+	-init method와 destroy method
+
+
+
+Spring Bean Scope
+
+스프링은 기본적으로 모든 bean을 singleton으로 생성하고 관리한다.
+	-singleton
+		싱글톤 빈은 스프링 컨테이너에서 한 번 생성되며 컨테이너가 사라질 때 빈도 제거된다.
+		기본 적으로 모든 빈은 scope가 명시적으로 지정되지 않으면 싱글톤이다
+
+	-prototype
+		프로토타입 빈은 모든 요청에서 새로운 객체를 생성하는 것을 의미한다.
+		즉 프로토타입 빈은 의존성 관계의 빈에 주입 될 때 새로운 객체가 생성되어 주입된다.
+
